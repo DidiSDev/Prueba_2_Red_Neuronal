@@ -2,9 +2,9 @@
 import tensorflow as tf  # IMPORTA TENSORFLOW, UNA BIBLIOTECA DE CÓDIGO ABIERTO PARA APRENDIZAJE AUTOMÁTICO.
 import numpy as np       # IMPORTA NUMPY, UNA BIBLIOTECA PARA MANIPULAR ARRAYS Y MATRICES NUMÉRICAS.
 
-# ---------------------------------------------------------------------------------
-# DEFINIR LOS DATOS DE ENTRADA Y SALIDA
-# ---------------------------------------------------------------------------------
+
+
+# """DEFINICION DE LOS DATOS DE ENTRADA Y SALIDA"""
 
 # CREAMOS UN ARRAY CON TEMPERATURAS EN GRADOS CELSIUS
 celsius = np.array([-40, -10, 0, 8, 15, 22, 38], dtype=float)
@@ -15,9 +15,9 @@ celsius = np.array([-40, -10, 0, 8, 15, 22, 38], dtype=float)
 farenheit = np.array([-40, 14, 32, 46, 59, 72, 100], dtype=float)
 # ESTE ARRAY CONTIENE LOS VALORES DE FAHRENHEIT QUE SERÁN LOS RESULTADOS QUE EL MODELO DEBE APRENDER A PREDICTAR.
 
-# ---------------------------------------------------------------------------------
-# DEFINICIÓN DE LA CAPA Y CONSTRUCCIÓN DEL MODELO
-# ---------------------------------------------------------------------------------
+
+
+# """DEFINICIÓN DE LA CAPA Y CONSTRUCCIÓN DEL MODELO"""
 
 # DEFINIMOS UNA CAPA DENSAMENTE CONECTADA CON UNA SOLA NEURONA
 capa = tf.keras.layers.Dense(units=1, input_shape=[1])  # -> LA CAPA SE AUTOREGISTRA CON 1 NEURONA.
@@ -28,10 +28,8 @@ modelo = tf.keras.Sequential([capa])
 # UN MODELO SECUENCIAL ES UNA PILA LINEAL DE CAPAS. AQUÍ, SOLO TENEMOS UNA CAPA,
 # PERO EN MODELOS MÁS COMPLEJOS SE PUEDEN AÑADIR MÁS CAPAS PARA CAPTURAR PATRONES MÁS COMPLEJOS.
 
-# ---------------------------------------------------------------------------------
-# CONFIGURACIÓN DEL PROCESO DE APRENDIZAJE DEL MODELO
-# ---------------------------------------------------------------------------------
 
+# """CONFIGURACIÓN DEL PROCESO DE APRENDIZAJE DEL MODELO"""
 # COMPILAMOS EL MODELO, ESPECIFICANDO EL OPTIMIZADOR Y LA FUNCIÓN DE PÉRDIDA
 modelo.compile(
     optimizer=tf.keras.optimizers.Adam(0.1),  # UTILIZA EL OPTIMIZADOR ADAM CON UNA TASA DE APRENDIZAJE DE 0.1.
@@ -40,10 +38,9 @@ modelo.compile(
 # EL OPTIMIZADOR ACTUALIZA LOS PESOS DURANTE EL ENTRENAMIENTO, MIENTRAS QUE LA FUNCIÓN DE PÉRDIDA
 # MIDE LA DIFERENCIA ENTRE LAS PREDICCIONES DEL MODELO Y LOS VALORES REALES.
 
-# ---------------------------------------------------------------------------------
-# ENTRENAMIENTO DEL MODELO
-# ---------------------------------------------------------------------------------
 
+
+# """ENTRENAMIENTO DEL MODELO"""
 print("Comenzando entrenamiento...")
 
 # ENTRENAMOS EL MODELO CON LOS DATOS DE CELSIUS Y FAHRENHEIT, DURANTE 500 ÉPOCAS
@@ -61,6 +58,8 @@ print("Modelo entrenado!! :)")
 
 # GRAFICANDO LA PÉRDIDA DURANTE EL ENTRENAMIENTO
 import matplotlib.pyplot as plt  # IMPORTA MATPLOTLIB PARA CREAR GRÁFICOS.
+
+
 
 
 plt.xlabel("€ Epoca")
